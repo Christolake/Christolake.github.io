@@ -1,28 +1,109 @@
-const canvas = document.getElementById('canvas');
-//ctx = Context
+const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
-const CANVAS_WIDTH = canvas.width = 800;
-const CANVAS_HEIGHT = canvas.height = 480;
-const spriteWidth = 330;
-const spriteHeight = 400;
-let frameX = 0;
-let frameY = 0;
-let gameFrame = 0;
-const staggerFrame = 8;
+canvas.width = 900;
+canvas.height = 600;
 
-const playerImage = new Image();
-playerImage.src = 'knight/KNIGHT.png'
+//global
+const cellSize =100;
+const cellGap = 3;
+const gameGrid = [];
+const defender = [];
 
+//mouse
+const mouse = {
+    x: undefined,
+    y: undefined,
+    width: 0.1,
+    height: 0.1,
+}
+let canvasPosition = canvas.getBoundingClientRect();
+canvas.addEventListener('mousemove', function(e){
+    mouse.x = e.x - canvasPosition.left;
+    mouse.y = e.y - canvasPosition.top;
+});
+canvas.addEventListener('mouseleave', function(){
+    mouse.x = undefined;
+    mouse.y = undefined;
+})
+
+//game board
+const controlsBat = {
+    width: canvas.width,
+    height: cellSize,
+}
+class Cell {
+    constructor(x, y){
+        this.x = x;
+        this.y = y;
+        this.width = cellSize;
+        this.height = cellSize;
+    }
+    draw(){
+        if (mouse.x && mouse.y && collision(this, mouse)){
+        ctx.strokeStyle = 'black';
+        ctx.strokeRect(this.x, this.y, this.width, this.height);
+        }
+    }
+}
+function createGrid(){
+    for (let y = cellSize; y < canvas.height; y += cellSize){
+        for (let x = 0; x < canvas.width; x += cellSize){
+            gameGrid.push(new Cell(x, y))
+        }
+    }
+}
+createGrid();
+function handleGameGrid(){
+    for (let i = 0; i < gameGrid.length; i++){
+        gameGrid[i].draw();
+    }
+}
+//projectiles
+//defenders
+class Defender {
+    constructor(x, y){
+        this.x = x;
+        this.y = y;
+        this.width = cellSize;
+        this.height = cellSize;
+        this.shooting = false;
+        this.health = 100;
+        this.projectile = [];
+        this.timer = 0;
+    }
+    draw(){
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(this.x, this.y, this.width, this.health);
+        ctx.fillStyle = 'gold';
+        ctx.font = '20px Arial';
+        ctx.fillText(Math.floor(this.health), this.x, this.y);
+    }
+}
+canvas.addEventListener('click', function(){
+    const gridPositionX = mouse.x - (mouse.x % cellSize);
+    const gridPositionY = mouse.y - (mouse.y % cellSize);
+    if (gridPositionX < cellSize) return;
+    let defenderCost = 100;
+})
+
+//enemies
+//resources
+//utilities
 function animate (){
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    //ctx.fillRect(100, 50, 100, 100);
-    //ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
-    let position = Math.floor(gameFrame/staggerFrame);
-    ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
-    if (gameFrame % staggerFrame == 0){
-    if (frameX < 9) frameX++;
-    else frameX = 0;}
-    gameFrame++;
+    ctx.clearRect(0,0,canvas.width, canvas.height);
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(0,0,controlsBat.width, controlsBat.height)
+    handleGameGrid();
     requestAnimationFrame(animate);
-};
+}
 animate();
+
+function collision(first, second){
+    if (    !(  first.x > second.x + second.width ||
+                first.x + first.width < second.x ||
+                first.y > second.y + second.height ||
+                first.y + first.height < second.y)
+    ) {
+        return true;
+        };
+};

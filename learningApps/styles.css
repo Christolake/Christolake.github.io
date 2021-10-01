@@ -1,0 +1,62 @@
+* {
+    color: #FED;
+    font-family: 'Fira Code Retina', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #222F;
+}
+
+header {
+    background: linear-gradient(180deg, #F40F, #A20F);
+    padding: 1em;
+    text-shadow: 2px 2px 3px #222F;
+    text-align: center;
+}
+
+.container {
+    background: linear-gradient(180deg, #444F, #222F);
+    padding: 1em;
+}
+h1 {
+    text-align: center;
+    font-size: 3em;
+    text-shadow: 0 0 10px #F40F;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #F40;
+    text-shadow: 0 0 5px #222F;
+}
+
+h3 span {
+    font-size: 0.5em;
+    color: #F40F;
+}
+
+.todo {
+    align-items: center;
+    padding: 0.25em;
+}
+
+h2 {
+    font-size: 1.5em;
+    text-align: center;
+    text-shadow: 0 0 5px #FEDA;
+}
+
+input {
+    color: #222F;
+}
+
+button {
+    background: #444F;
+    padding: 0.5em;
+    font-weight: bold;
+    border-radius: 40%;
+}
