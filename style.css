@@ -1,12 +1,99 @@
-body {
-  background: black;
+/* Variables */
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&family=Grandstander:wght@600&family=Roboto+Slab&display=swap');
+
+:root {
+  --font: "Roboto Slab", sans-serif;
+  --fontBig: "El Messiri", sans-serif;
+  --white: #FED;
+  --color: #F52;
+  --alt: #48C;
+  --black: #333;
+  --select: #FE2;
+  --pink: #F28;
+  --gradient: linear-gradient(var(--black), #111);
+  --transition: 0.3s;
 }
-#canvas1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 900px;
-  height: 600px;
-  background: white;
+
+/* CSS resets */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--white);
+  color: var(--color);
+}
+
+.logo {
+  font-family: var(--fontBig);
+  font-size: 2.5em;
+  filter: drop-shadow(2px 2px 2px #000);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+a:hover {
+  color: var(--color);
+}
+
+nav {
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 3px 5px var(--black);
+  background: var(--gradient);
+  padding: 1.5em;
+}
+
+nav ul {
+  display: flex;
+  gap: 5rem;
+}
+
+nav a {
+  transition: var(--transition);
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+
+ion-icon {
+  font-size: 2.5em;
+  color: var(--color);
+}
+
+.dark-mode {
+  color: var(--white);
+  font-size: 2em;
+}
+
+img {
+  padding: 1em;
+  width: 60vw;
+  height: auto;
+}
+
+img .cls-107 {
+  fill: var(--alt);
 }
