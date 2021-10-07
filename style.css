@@ -97,3 +97,7 @@ img {
 img .cls-107 {
   fill: var(--alt);
 }
+
+.hero {
+  display: flex;
+}

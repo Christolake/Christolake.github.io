@@ -1,0 +1,123 @@
+:root {
+    --purple: #85A;
+    --pattern: #AB88C3;
+    --vermilion: #FA0;
+    --black: #222;
+    --white: #FDA;
+    --logo-font: 'Fontdiner Swanky', cursive;
+    --title-font: 'Milonga', cursive;
+    --text-font: 'Acme', sans-serif;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: var(--text-font);
+    font-size: 1.25em;
+}
+
+.menu-button, .menu-close {
+    display: none;
+}
+
+nav {
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    align-items: flex-end;
+    background-color: var(--purple);
+    opacity: 1;
+    background-image: radial-gradient(circle at center center, var(--vermilion), var(--purple)), repeating-radial-gradient(circle at center center, var(--purple), #ab88c3, 10px, transparent 20px, transparent 10px);
+    background-blend-mode: multiply;
+    width: 100%;
+    z-index: 10;
+}
+
+ul {
+    display: flex;
+}
+
+ul li {
+    padding: 1.5em 3em 0.5em 3em;
+    cursor: pointer;
+    list-style-type: none;
+    color: var(--white);
+    font-size: 1.25em;
+    text-shadow: 0px 0px 4px black;
+}
+
+h1 {
+    display: inline-flex;
+    font-family: var(--logo-font);
+    font-size: 2.5em;
+    color: var(--vermilion);
+    text-shadow: 0 0 6px black;
+    word-spacing: 2em;
+}
+
+
+a {
+    color: inherit;
+}
+
+
+
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: #000;
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;  
+}
+
+.hero video {
+    justify-content: center;
+    width: 60%;
+    object-fit: cover;
+    margin: -12% 0 -10% 0;
+}
+
+.mask {
+    width: 70%;
+    position: absolute;
+    z-index: 5;
+    user-select: none;
+    filter: invert();
+    mix-blend-mode: multiply;
+}
+
+.hero h2 {
+    color: var(--white);
+    position: absolute;
+    z-index: 8;
+    text-shadow: 0px -2px 20px #000;
+    margin-top: 25%;
+    font-size: 2.5em;
+}
+.title {
+    font-family: var(--title-font);
+}
+
+.CtA {
+    position: absolute;
+    margin-top: 34%;
+    border-radius: 40%;
+    padding: 0.5em;
+    background: var(--vermilion);
+    color: var(--purple);
+    font-family: var(--logo-font);
+    font-size: 1em;
+    border-color: transparent;
+    filter: drop-shadow(0px 0px 5px black);
+    z-index: 15;
+}
