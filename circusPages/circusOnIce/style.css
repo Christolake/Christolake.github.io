@@ -36,6 +36,7 @@ nav
     font-size: 3em;
     text-transform: uppercase;
     width: 50%;
+    text-shadow: 0 0 6px black, 0 0 6px black;
 }
 
 .logo a
