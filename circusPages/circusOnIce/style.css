@@ -27,6 +27,7 @@ nav
 {
     background: var(--purple);
     display: flex;
+    width: 100vw;
 }
 
 .logo
@@ -34,12 +35,25 @@ nav
     font-family: 'Cinzel Decorative', fantasy;
     font-size: 3em;
     text-transform: uppercase;
+    width: 50%;
 }
 
 .logo a
 {
     -webkit-text-stroke: 1px brown;
     paint-order: stroke fill;
+}
+
+.menu
+{
+    display: flex;
+    width: 50%;
+    margin-left: auto;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 20px;
+    list-style: none;
+    font-size: 1.2em;
 }
 
 footer
