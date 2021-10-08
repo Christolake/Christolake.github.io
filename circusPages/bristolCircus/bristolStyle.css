@@ -1,6 +1,6 @@
 :root {
     --purple: #85A;
-    --pattern: #AB88C3;
+    --celt: #68D;
     --vermilion: #FA0;
     --black: #222;
     --white: #FDA;
@@ -120,4 +120,35 @@ a {
     border-color: transparent;
     filter: drop-shadow(0px 0px 5px black);
     z-index: 15;
+}
+
+.show-section {
+    background: var(--purple);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 0 10em;
+    overflow: hidden;
+}
+
+.show-section .title {
+    padding: 1em;
+    position: top;
+    margin-top: -10%;
+    text-shadow: 0 0 5px black;
+    color: var(--white);
+}
+
+.show-section img {
+    padding: 1em 0 0 8em;
+    height: 500px;
+}
+
+.cast {
+    display: flex;
+}
+
+.hula {
+    padding: 1em 0 0 8em;
+    height: 500px;
 }
