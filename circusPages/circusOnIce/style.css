@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Open+Sans:wght@400;600&display=swap');
+:root
+{
+    --purple: #80F;
+    --gold: #FB3;
+    --ice: linear-gradient(to bottom, #0FF, #FFF);
+}
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: var(--gold)
+}
+
+body
+{
+    background: var(--ice);
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+nav
+{
+    background: var(--purple);
+    display: flex;
+}
+
+.logo
+{
+    font-family: 'Cinzel Decorative', fantasy;
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+.logo a
+{
+    -webkit-text-stroke: 1px brown;
+    paint-order: stroke fill;
+}
+
+footer
+{
+    position: absolute;
+    min-width: 100vw;
+    bottom: 0%;
+    background: var(--purple);
+    height: 1.5em;
+}
