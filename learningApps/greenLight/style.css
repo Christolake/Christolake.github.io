@@ -1,0 +1,61 @@
+:root {
+    --move: 0em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 8em;
+}
+
+.open, .closed, .oops {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.field {
+    background: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 70%;
+}
+
+.winner, .player, .dead{
+    font-size: 2em;
+}
+
+.player, .dead{
+    position: absolute;
+    margin-top: calc(28em - var(--move));
+    display: none;
+    transition: 0.5s;
+}
+
+.alive {
+    display: block;
+}
