@@ -11,16 +11,17 @@
     <header>
         <h1 class="logo">Red Light - Green Light</h1>
     </header>
-    <div class="timer">5:00</div>
-    <div class="winner">🧍🧍‍♀️🧍‍♂️🧍🧍‍♂️🧍🧍‍♀️🧍‍♀️🧍🧍‍♂️</div>
+    <div class="game-state" id="game-state">START</div>
+    <div class="winner"></div>
     <div class="head">
-        <div class="open" id="open">🙉</div>
-        <div class="closed active" id="closed">🙈</div>
+        <div class="open active" id="open">🙉</div>
+        <div class="closed" id="closed">🙈</div>
         <div class="oops" id="oops">🙊</div>
     </div>
     <section class="field" id="field"></section>
     <div class="player alive" id="player">🧍</div>
     <div class="dead" id="dead">😵</div>
+    <footer>&copy;2021 - Selva Solutions, LLC. Game made by Christopher Selva.</footer>
     <script src="app.js"></script>
 </body>
 </html>
