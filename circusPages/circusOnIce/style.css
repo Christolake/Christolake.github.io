@@ -37,7 +37,7 @@ body::after
     min-width: 100vw;
     min-height: 100vh;
     background: url(pattern.jpg) repeat;
-    background-size: 25%;
+    background-size: 30em;
     filter: invert(1);
     mix-blend-mode: multiply;
     animation: slide 60s linear infinite;
