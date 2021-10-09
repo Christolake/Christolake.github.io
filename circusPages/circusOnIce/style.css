@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Open+Sans:wght@400;600&display=swap');
+@font-face {
+	font-family:'frozen'; 
+	src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Ice%20kingdom%20-%20Bold%20-%20Por%20Kustren.woff');
+}
 :root
 {
     --purple: #80F;
-    --gold: #FB3;
-    --ice: linear-gradient(to bottom, #0FF, #FFF);
+    --gold: #EB0;
+    --ice: linear-gradient(to bottom, #0FFD, #FFFD);
+    --darkIce: linear-gradient(to bottom, #022, #202);
 }
 
 *
@@ -17,32 +22,62 @@
 
 body
 {
-    background: var(--ice);
+    background: var(--darkIce);
     min-height: 100vh;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
+    color: var(--gold);
+}
+
+body::after
+{
+    content: '';
+    display: flex;
+    min-width: 100vw;
+    min-height: 100vh;
+    background: url(pattern.jpg) repeat;
+    background-size: 25%;
+    filter: invert(1);
+    mix-blend-mode: multiply;
+    animation: slide 60s linear infinite;
+}
+
+@keyframes slide
+{
+    0%
+    {
+        background-position: 0 0;
+    }
+    100%
+    {
+        background-position: 0 1000px;
+    }
 }
 
 nav
 {
-    background: var(--purple);
+    background: linear-gradient(to bottom left, #A8F, var(--purple), #202);
     display: flex;
     width: 100vw;
 }
 
 .logo
 {
-    font-family: 'Cinzel Decorative', fantasy;
-    font-size: 3em;
-    text-transform: uppercase;
+    font-family: 'frozen', 'Cinzel Decorative', fantasy;
+    font-size: 5em;
     width: 50%;
-    text-shadow: 0 0 6px black, 0 0 6px black;
 }
 
 .logo a
 {
-    -webkit-text-stroke: 1px brown;
+    margin-left: 1em;
+    -webkit-text-stroke: 3px #4206;
+    background: radial-gradient(ellipse closest-side at 30%, #FB08, #0006), url(glitter.jpg);
+    background-size: 75%;
     paint-order: stroke fill;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .menu
@@ -50,7 +85,7 @@ nav
     display: flex;
     width: 50%;
     margin-left: auto;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-end;
     margin: 20px;
     list-style: none;
@@ -64,4 +99,5 @@ footer
     bottom: 0%;
     background: var(--purple);
     height: 1.5em;
+    z-index: 1000;
 }
