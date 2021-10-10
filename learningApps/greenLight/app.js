@@ -68,15 +68,21 @@ gameButton.addEventListener('click', () => !dead.classList.contains('alive') ? g
 //ACCIONES DEL JUGADOR
 
 player.addEventListener('mouseup', () => {
+    // WIN CONDITION -->
     if (clicks >= 600) {
         document.querySelector('.active').style.setProperty('display', 'none')
         gameButton.textContent = 'YOU WIN';
         score.textContent = clicks * 200 - playedTime;
     }
+    // WALKING THE FIELD if Monkey Blind -->
     else if (closedHead.classList.contains('active') && clicks < 600) {
         clicks+=10;
         LEVEL.textContent = clicks;
         movement.style.setProperty('--move', clicks + 'px');
+    }
+    // IF GAME NOT STARTED -->
+    else if (oopsHead.classList.contains('active')) {
+        alert('Press START to begin the game')
     }
     else {
         die();

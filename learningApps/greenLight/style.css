@@ -62,12 +62,14 @@ body {
 }
 
 .field {
+    margin-top: 50px;
     background: sandybrown;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: 650px;
+    border-radius: 10%;
     transition: 200ms;
 }
 
