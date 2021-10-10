@@ -28,6 +28,7 @@ function die() {
   document.querySelector(".field").style.setProperty("background", "black");
 }
 
+
 function restart() {
   clicks = 0;
   gameButton.textContent = "START";
@@ -42,8 +43,9 @@ function restart() {
 }
 
 let time = () => Math.ceil(Math.random() * (level[01] - min) + min);
+let repeat = () => setInterval(game, 5000);
 
-const game = function () {
+const game = (callback) => {
   if (!dead.classList.contains("alive")) {
     let start = time();
     playedTime += start;
@@ -59,12 +61,19 @@ const game = function () {
       field.style.setProperty("background", "red");
       field.classList.remove("green");
       field.classList.add("red");
+      
     }, start);
+    ;
   }
+  if (!dead.classList.contains("alive")) {
+    callback();
+  };
 };
 
+
+
 gameButton.addEventListener("click", () =>
-  !dead.classList.contains("alive") ? game() : restart()
+  !dead.classList.contains("alive") ? game(repeat) : restart()
 );
 
 //ACCIONES DEL JUGADOR
@@ -87,6 +96,8 @@ player.addEventListener("mouseup", () => {
     alert("Press START to begin the game");
   } else {
     die();
+    console.log(repeat);
+    clearInterval(repeat);
     gameButton.textContent = "GAME OVER";
     score.textContent = clicks * 200 - playedTime;
   }
