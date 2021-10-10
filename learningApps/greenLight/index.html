@@ -11,17 +11,20 @@
     <header>
         <h1 class="logo">Red Light - Green Light</h1>
     </header>
-    <div class="game-state" id="game-state">START</div>
-    <div class="winner"></div>
+    <section class="nav">
+        <div class="level">0</div>
+        <div class="game-state" id="game-state">START</div>
+        <div class="score">0</div>
+    </section>
     <div class="head">
-        <div class="open active" id="open">🙉</div>
+        <div class="open" id="open">🙉</div>
         <div class="closed" id="closed">🙈</div>
-        <div class="oops" id="oops">🙊</div>
+        <div class="oops active" id="oops">🙊</div>
     </div>
     <section class="field" id="field"></section>
     <div class="player alive" id="player">🧍</div>
     <div class="dead" id="dead">😵</div>
-    <footer>&copy;2021 - Selva Solutions, LLC. Game made by Christopher Selva.</footer>
+    <footer>&copy; Year 1 after COVID (2021) - Selva Solutions, LLC. Game made by Christopher Selva.</footer>
     <script src="app.js"></script>
 </body>
 </html>
