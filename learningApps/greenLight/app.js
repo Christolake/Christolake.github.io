@@ -74,7 +74,7 @@ player.addEventListener('mouseup', () => {
         score.textContent = clicks * 200 - playedTime;
     }
     else if (closedHead.classList.contains('active') && clicks < 600) {
-        clicks+=300;
+        clicks+=10;
         LEVEL.textContent = clicks;
         movement.style.setProperty('--move', clicks + 'px');
     }
