@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Jost:wght@900&family=Open+Sans:wght@400;600&display=swap');
 @font-face {
 	font-family:'frozen'; 
 	src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Ice%20kingdom%20-%20Bold%20-%20Por%20Kustren.woff');
@@ -37,19 +37,6 @@ body
     animation: slide 20s linear infinite;
 }
 
-/* .background::after
-{
-    content: '';
-    display: flex;
-    min-width: 100vw;
-    min-height: 100vh;
-    background: url(pattern.jpg) repeat;
-    background-size: 30em;
-    filter: invert(1);
-    mix-blend-mode: multiply;
-    animation: slide 10s linear infinite;
-} */
-
 @keyframes slide
 {
     0%
@@ -66,37 +53,59 @@ body
 {
     filter: drop-shadow(0 0 6px black);
     padding: 2em;
+    width: 20vw;
 }
 
 nav
 {
     background: linear-gradient(to bottom left, #A8F, var(--purple), #204);
     display: flex;
-    width: 100vw;
+    width: 100%;
 }
 
 .logo
 {
     font-family: 'frozen', 'Cinzel Decorative', fantasy;
-    font-size: 5em;
-    width: 50%;
+    font-size: 3.5em;
+    text-align: center;
+    width: 100%;
+    margin: 0.1em 1em;
+    justify-content: flex-start;
+    filter: drop-shadow(0 0 1px black);
+
 }
 
 .logo a
 {
-    margin-left: 1em;
-    -webkit-text-stroke: 3px #4206;
+    -webkit-text-stroke: 1px #000D;
     background: radial-gradient(ellipse closest-side at 30%, #FB08, #0006), url(glitter.jpg);
     background-size: 75%;
     paint-order: stroke fill;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    text-align: center;
 }    
+
     .logo a::before {
-		content: attr(data-heading);
+        content: 'Circus On Ice';
+        position: absolute;
+        text-align: center;
+        filter: blur(2px);
+        margin: auto;
+        left: 0;
+		top: 0.1em;
+		width: 100%;
+        color: #000A;
+        font-size: 0.95em;
+        z-index: -1;
+    }
+
+    .logo a::after {
+		content: 'Circus On Ice';
 		position: absolute;
-        margin-left: 1em;
+        text-align: center;
+        margin: auto;
 		left: 0;
 		top: 0;
 		width: 100%;
@@ -105,8 +114,8 @@ nav
         background-clip: text;
 		color: transparent;
 		mix-blend-mode: screen;
-		animation: shine 15s infinite;
-		background-size: 250%;
+		animation: shine 3s infinite;
+		background-size: 200%;
 		text-shadow: 
 			2px 2px 5px rgba(#000, 1),
 			-2px 2px 5px rgba(#000, 1),
@@ -118,16 +127,21 @@ nav
 	100% {background-position: 100%;}
 }
 
+.on-ice {
+    background: var(--ice);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 .menu
 {
     display: flex;
-    width: 50%;
-    margin-left: auto;
+    width: 100%;
     justify-content: space-around;
     align-items: flex-end;
-    margin: 20px;
     list-style: none;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 footer
@@ -139,4 +153,25 @@ footer
     background: var(--purple);
     height: 1.5em;
     z-index: 1000;
+}
+
+.menu li a {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    color: var(--gold);
+}
+
+@media screen and (max-width: 767px) {
+    .menu {
+        display: none;
+    }
+
+    .logo {
+        font-size: 2.2em;
+    }
 }
