@@ -5,28 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brian Comedy</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="light">
+<body>
     <script src="circletype.min.js"></script>
-    <nav class="navbar light-color">
+    <nav class="navbar bg-color">
         <div class="nav-container">
             <ul>
                 <li class="logo-text" ><a href="index.html">Brian Comedy</a></li>
                 <li><a href="#">contact me</a></li>
+                <li id="toggle">
+                    <ion-icon name="ios-bulb" class="bulb bulbon on"></ion-icon>
+                    <ion-icon name="ios-bulb" class="bulb bulboff off"></ion-icon>
+                </li>
             </ul>
         </div>
     </nav>
     <main>
         <div class="hero">
-            <h1 class="light-logo"><span id="logo">b r i a n</span><br><span id="comedy">c o m e d y</span></h1>
+            <ion-icon class="mic" name="ios-microphone"></ion-icon>
+            <h1 class="logo" id="logo-hero"><span id="brian">b r i a n</span><br><span id="comedy">c o m e d y</span></h1>
+            <ion-icon class="bowtie" name="ios-bowtie"></ion-icon>
             <p>The guy in yellow suit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt sequi rerum quis amet. Repellendus animi qui, aliquid recusandae modi repudiandae.</p>
         </div>
     </main>
-    <footer class="light-color light-semitext">
+    <footer class="bg-color light-semitext">
         Copyright &copy; 2022 Selva Entertainment LLC. <br> Website designed by Christopher Selva. All rights reserved.
     </footer>
     <script src="main.js"></script>
-
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
 </html>
