@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500&family=Sansita+Swashed:wght@500&display=swap');
+
+:root {
+    --white: #FFA;
+    --first: #F30;
+    --compl: #0B7;
+    --black: #151515;
+    --display: 'Josefin Sans', sans-serif;
+    --text: 'Sansita Swashed', cursive;
+}
+
+* {
+    color: var(--white);
+    font-family: var(--text);
+}
+
+body {
+    background: var(--black);
+}
+
+h1 {
+    font-family: var(--display);
+}
+
+.container {
+    display: flex;
+    width: 375px;
+    height: 650px;
+    background: #104;
+    border: 2px solid var(--first);
+    border-radius: 10px;
+    content: '';
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    overflow: hidden;
+}
+
+.container .crowd {
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    background: center / 200px repeat url(images/crowd.jpg);
+    animation: spin 6s linear infinite;
+    -webkit-animation: spin 6s linear infinite;
+    overflow: hidden;
+}
+
+.container .circus {
+    height: 650px;
+    
+    animation: spin 5s linear infinite;
+    -webkit-animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+}
+    100% {
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+}
+}
+
+.clown-right {
+    position: absolute;
+}
+

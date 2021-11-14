@@ -172,6 +172,7 @@ footer {
 }
 
 .material-icons {
+  width: 2em;
   font-family: "Material Icons";
   color: var(--gold);
   filter: drop-shadow(0 0 4px var(--blueglory));

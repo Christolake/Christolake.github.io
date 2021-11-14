@@ -1,0 +1,86 @@
+@import url(//db.onlinewebfonts.com/c/0d02c5478254b9b31ea8fc5dd46149c2?family=AlgerianMesaPlainW00-Rg);
+
+:root {
+    --title-textt: 'AlgerianMesaPlainW00-Rg';
+    --primary: #fcdf4e;
+    --complement: #b09925;
+    --accent: #8c2621;
+    --white: #eee9eb;
+    --black: #2c2723;
+    --highlight: #ff473e;
+}
+a, li {
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.light {
+    background: var(--white);
+    color: var(--black);
+}
+
+.light-color {
+    background: var(--primary)
+}
+.light-text {
+    color: var(--primary);
+}
+.light-logo {
+    color: var(--accent);
+}
+.light-semitext {
+    color: var(--complement);
+}
+.dark {
+    background: var(--black);
+    color: var(--white);
+}
+.dark-color {
+    background: var(--accent);
+}
+.dark-text {
+    color: var(--highlight);
+}
+.dark-logo {
+    color: var(--highlight);
+}
+.dark-semitext {
+    color: var(--highlight);
+}
+body {
+    font-family: var(--title-textt);
+}
+
+nav {
+    padding: 0.5em;
+    font-size: 1.5em;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    padding: 3em;
+    font-size: 4em;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 3px 3px 0 var(--accent);
+}
+
+#logo {
+    font-size: 1.5em;
+}
+footer {
+    position: fixed;
+    width: 100vw;
+    height: 5vh;
+    top: 95vh;
+}
